@@ -1,0 +1,17 @@
+.social-links-about-me {
+  display: flex;
+  justify-content: space-between;
+  width: 10%;
+  margin: auto;
+}
+
+.social-links-about-me i {
+  color: white;
+  font-size: 2em;
+  height: 2em;
+}
+
+.footer {
+  width: 35%;
+  margin: auto;
+}
