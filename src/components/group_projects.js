@@ -141,8 +141,12 @@ class GroupProjects extends Component {
           onChange={(tabId) => this.setState({ activeTab: tabId })}
           ripple
         >
-          <Tab>All</Tab>
-          <Tab>Web</Tab>
+          <Tab>
+            <span className="tab">All</span>
+          </Tab>
+          <Tab>
+            <span className="tab">Web</span>
+          </Tab>
         </Tabs>
         <section>
           <div

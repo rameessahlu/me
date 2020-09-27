@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Footer, FooterSection } from "react-mdl";
+import { Footer } from "react-mdl";
 import "./styles/contact_me.css";
 
 class ContactMe extends Component {
@@ -54,18 +54,9 @@ class ContactMe extends Component {
             </a>
           </div>
           <div className="footer">
-            <FooterSection
-              type="middle"
-              logo={
-                <div>© 2020 Copyright Ramees Sahlu. All rights reserved.</div>
-              }
-            ></FooterSection>
-            <div>
-              <p>
-                This site is built with ReactJS. The source code can be found on{" "}
-                <a href="https://github.com/rameessahlu/me">Github</a>.
-              </p>
-            </div>
+            Designed & Built by Ramees Sahlu. <br />
+            This site is built with ReactJS. The source code can be found on{" "}
+            <a href="https://github.com/rameessahlu/me">Github</a>.
           </div>
         </Footer>
       </div>

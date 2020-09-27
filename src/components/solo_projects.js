@@ -51,6 +51,21 @@ class SoloProjects extends Component {
               "https://play.google.com/store/apps/details?id=com.diloopstudios.DisinfectantTunnelForPets",
           },
         },
+        {
+          _id: 2,
+          content: {
+            src: "http://www.getmdl.io/assets/demos/welcome_card.jpg",
+            type: "img",
+          },
+          name: "Context based Search Engine",
+          project_type: "web",
+          desc:
+            " A context based search engine which can accept query from user and search the document of all types from a shared location and provide the closest description with highest matching values",
+          tech_stack: "Python flask, ElasticSearch, jQuery, CSS",
+          proj_links: {
+            github: "https://github.com/rameessahlu/ContextualSearchEngine",
+          },
+        },
       ],
       name_to_ico: {
         play_store: ["fa fa-play", "Play Store"],
@@ -69,7 +84,7 @@ class SoloProjects extends Component {
       <div className="project-grid">
         {this.state.solo_projects.map((projs) => {
           return (
-            <React.Fragment>
+            <React.Fragment key={projs._id}>
               {proj_list.includes(projs._id) && (
                 <Card
                   shadow={5}
@@ -106,7 +121,7 @@ class SoloProjects extends Component {
                   <CardText> Stack: {projs.tech_stack}</CardText>
                   {Object.keys(projs.proj_links).map((key, value) => {
                     return (
-                      <CardActions border>
+                      <CardActions border key={projs._id}>
                         <Button
                           onClick={() => {
                             this.handleBtnClick(projs.proj_links[key]);
@@ -135,17 +150,14 @@ class SoloProjects extends Component {
 
   toggleProjects = () => {
     if (this.state.activeTab === 0) {
-      var proj_list = [0, 1];
+      var proj_list = [0, 1, 2];
       return this.genarateProjectInfo(proj_list);
     } else if (this.state.activeTab === 1) {
       proj_list = [0];
       return this.genarateProjectInfo(proj_list);
     } else if (this.state.activeTab === 2) {
-      return (
-        <div>
-          <h1>Empty!</h1>
-        </div>
-      );
+      proj_list = [2];
+      return this.genarateProjectInfo(proj_list);
     } else if (this.state.activeTab === 3) {
       proj_list = [1];
       return this.genarateProjectInfo(proj_list);
@@ -165,7 +177,7 @@ class SoloProjects extends Component {
           className="proj-heading"
         >
           <span style={{ fontFamily: "Lato" }}>
-            <i>Solo Projects</i>
+            <i>Projects</i>
           </span>
         </h1>
         <Tabs
@@ -173,10 +185,18 @@ class SoloProjects extends Component {
           onChange={(tabId) => this.setState({ activeTab: tabId })}
           ripple
         >
-          <Tab>All</Tab>
-          <Tab>Mobile</Tab>
-          <Tab>Web</Tab>
-          <Tab>Games</Tab>
+          <Tab>
+            <span className="tab">All</span>
+          </Tab>
+          <Tab>
+            <span className="tab">Mobile</span>
+          </Tab>
+          <Tab>
+            <span className="tab">Web</span>
+          </Tab>
+          <Tab>
+            <span className="tab">Games</span>
+          </Tab>
         </Tabs>
         <section>
           <div

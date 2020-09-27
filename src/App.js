@@ -12,77 +12,71 @@ function App() {
         <div>
           <Layout className="layout-color">
             <Header
+              className="header-style"
               transparent
               title={
                 <div style={{ fontFamily: "Cedarville Cursive" }}>
                   Ramees Sahlu
                 </div>
               }
-              style={{ color: "black" }}
-              className="header-color"
+              style={{ color: "white" }}
             >
               <Navigation>
-                <HashLink
-                  to="/#about_me"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  About Me
+                <HashLink to="/#about_me">
+                  <span className="hash-link-style">
+                    <span className="numbering">01.</span> About Me
+                  </span>
                 </HashLink>
-                <HashLink
-                  to="/#group_projects"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  Group Projects
+                <HashLink to="/#solo_projects">
+                  <span className="hash-link-style">
+                    <span className="numbering">02.</span> Projects
+                  </span>
                 </HashLink>
-                <HashLink
-                  to="/#solo_projects"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  Solo Projects
+                <HashLink to="/#contact_me">
+                  <span className="hash-link-style">
+                    <span className="numbering">03.</span> Contact Me
+                  </span>
                 </HashLink>
-                <HashLink
-                  to="/#contact_me"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  Contact Me
-                </HashLink>
-                <Link
-                  to="/resume"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  Resume
+                <Link to="/resume">
+                  <span className="hash-link-style">
+                    <span className="numbering">04.</span> Resume
+                  </span>
                 </Link>
               </Navigation>
             </Header>
             <Drawer
               title={
-                <div style={{ fontFamily: "Cedarville Cursive" }}>
+                <div
+                  style={{
+                    fontFamily: "Cedarville Cursive",
+                    color: "white",
+                  }}
+                >
                   Ramees Sahlu
                 </div>
               }
-              style={{ color: "black" }}
+              style={{ color: "black", background: "#0A192F" }}
             >
               <Navigation>
-                <Link to="/" style={{ color: "black", fontFamily: "Lato" }}>
-                  About Me
+                <Link to="/">
+                  <span className="link-style">
+                    <span className="numbering">01.</span>About Me
+                  </span>
                 </Link>
-                <Link
-                  to="/solo_projects"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  Solo Projects
+                <Link to="/solo_projects">
+                  <span className="link-style">
+                    <span className="numbering">02.</span>Solo Projects
+                  </span>
                 </Link>
-                <Link
-                  to="/group_projects"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  Group Projects
+                <Link to="/group_projects">
+                  <span className="link-style">
+                    <span className="numbering">03.</span>Group Projects
+                  </span>
                 </Link>
-                <Link
-                  to="/contact_me"
-                  style={{ color: "black", fontFamily: "Lato" }}
-                >
-                  Contact Me
+                <Link to="/contact_me">
+                  <span className="link-style">
+                    <span className="numbering">04.</span>Contact Me
+                  </span>
                 </Link>
               </Navigation>
             </Drawer>

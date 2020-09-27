@@ -31,17 +31,21 @@ class AboutMe extends Component {
                 lineHeight: 1.5,
               }}
               data-aos="fade-in"
+              display="block"
             >
               I'm a recently graduated full-stack software developer based in
               Bangalore, India. I have previously worked as a full-stack
               developer at UST Global for 2 years where I was focused on
               development to DevOps automation such as CI/CD pipeline, testing
-              and deployment. I am a passionate learner and I always engage in
-              various development projects like apps, games and web projects.
+              and deployment. I am a passionate learner and I enjoy writing code
+              and building products, whether that be websites, apps or even
+              games.
+              <br />
+              <br />
               I'm currently looking for a job to restart my career after my
               Master's, so if you think I'd be a good fit, get in touch. You are
-              welcome to check out my GitHub projects and view some of my recent
-              projects below.
+              welcome to check out my GitHub projects and some of my recent
+              projects are given below.
             </p>
             <div className="social-links">
               {/* LinkedIn */}

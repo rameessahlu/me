@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AboutMe from "./about_me";
 import SoloProjects from "./solo_projects";
-import GroupProjects from "./group_projects";
+//import GroupProjects from "./group_projects";
 import ContactMe from "./contact_me";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,7 +20,7 @@ class CombinedMainPage extends Component {
     return (
       <div>
         <AboutMe />
-        <GroupProjects />
+        {/*<GroupProjects /> */}
         <SoloProjects />
         <ContactMe />
       </div>
