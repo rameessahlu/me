@@ -12,7 +12,8 @@ p {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   color: #ccd6f6;
 }
 
@@ -29,4 +30,16 @@ h3 {
 .numbering {
   color: #46b2a0;
   font-family: "Fira Code";
+}
+
+.intro {
+  display: flex;
+  flex-direction: row;
+}
+.intro::after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 0.2px solid #ccd6f6;
+  margin: auto;
+  margin-left: 1em;
 }

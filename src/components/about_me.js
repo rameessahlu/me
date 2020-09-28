@@ -12,18 +12,21 @@ class AboutMe extends Component {
         id={"about_me"}
       >
         <Grid className="about-me-grid">
-          <Cell col={3.5}>
-            <img
-              src={profile_photo}
-              alt="profile_photo"
-              className="profile-img"
-              data-aos="fade-up"
-            />
-          </Cell>
           <Cell col={8}>
-            <h3 style={{ textAlign: "left" }} data-aos="fade-in">
-              <i>Hi! I'm Ramees Sahlu</i>
+            <h3
+              style={{
+                textAlign: "left",
+                margin: "0 auto",
+                justifyContent: "center",
+                marginBottom: "1em",
+                fontFamily: "Lato",
+              }}
+            >
+              <span className="numbering">01.</span>About Me
             </h3>
+            <h4 style={{ textAlign: "left" }} data-aos="fade-in">
+              <i className="intro">Hi! I'm Ramees Sahlu </i>
+            </h4>
             <p
               style={{
                 fontSize: "18px",
@@ -76,6 +79,14 @@ class AboutMe extends Component {
                 <i className="fa fa-play" aria-hidden="true"></i>
               </a>
             </div>
+          </Cell>
+          <Cell col={3.5}>
+            <img
+              src={profile_photo}
+              alt="profile_photo"
+              className="profile-img"
+              data-aos="fade-up"
+            />
           </Cell>
         </Grid>
       </div>

@@ -57,29 +57,24 @@ function App() {
                   Ramees Sahlu
                 </div>
               }
-              style={{ color: "black", background: "#0A192F" }}
+              style={{ color: "black", background: "#172A45" }}
             >
               <Navigation>
-                <Link to="/">
+                <HashLink to="/#about_me">
                   <span className="link-style">
                     <span className="numbering">01.</span>About Me
                   </span>
-                </Link>
-                <Link to="/solo_projects">
+                </HashLink>
+                <HashLink to="/#solo_projects">
                   <span className="link-style">
-                    <span className="numbering">02.</span>Solo Projects
+                    <span className="numbering">02.</span>Projects
                   </span>
-                </Link>
-                <Link to="/group_projects">
+                </HashLink>
+                <HashLink to="/#contact_me">
                   <span className="link-style">
-                    <span className="numbering">03.</span>Group Projects
+                    <span className="numbering">03.</span>Contact Me
                   </span>
-                </Link>
-                <Link to="/contact_me">
-                  <span className="link-style">
-                    <span className="numbering">04.</span>Contact Me
-                  </span>
-                </Link>
+                </HashLink>
               </Navigation>
             </Drawer>
             <Content>

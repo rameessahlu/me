@@ -92,12 +92,13 @@ class SoloProjects extends Component {
                     minWidth: "20em",
                     marginLeft: "3em",
                     marginBottom: "3em",
+                    background: "#172A45",
                   }}
                 >
                   {projs.content.type === "img" ? (
                     <CardTitle
                       style={{
-                        color: "#fff",
+                        color: "#0a192f",
                         height: "10em",
                         background: `url(${projs.content.src})  center / cover`,
                       }}
@@ -114,11 +115,15 @@ class SoloProjects extends Component {
                   <CardText
                     style={{
                       height: "8em",
+                      color: "#ccd6f6",
                     }}
                   >
                     {projs.desc}
                   </CardText>
-                  <CardText> Stack: {projs.tech_stack}</CardText>
+                  <CardText style={{ color: "#ccd6f6" }}>
+                    {" "}
+                    Stack: {projs.tech_stack}
+                  </CardText>
                   {Object.keys(projs.proj_links).map((key, value) => {
                     return (
                       <CardActions border key={projs._id}>
@@ -126,10 +131,12 @@ class SoloProjects extends Component {
                           onClick={() => {
                             this.handleBtnClick(projs.proj_links[key]);
                           }}
+                          style={{ color: "#ccd6f6" }}
                         >
                           <i
                             className={this.state.name_to_ico[key][0]}
                             aria-hidden="true"
+                            style={{ color: "#ccd6f6" }}
                           ></i>
                           {" " + this.state.name_to_ico[key][1]}
                         </Button>
@@ -167,23 +174,24 @@ class SoloProjects extends Component {
   render() {
     return (
       <div className="category" id={"solo_projects"}>
-        <h1
+        <h3
           style={{
-            textAlign: "center",
+            textAlign: "left",
             margin: "0 auto",
             justifyContent: "center",
             marginBottom: "1em",
+            fontFamily: "Lato",
+            width: "88%",
           }}
-          className="proj-heading"
+          className="proj-heading intro"
         >
-          <span style={{ fontFamily: "Lato" }}>
-            <i>Projects</i>
-          </span>
-        </h1>
+          <span className="numbering">02.</span>Projects
+        </h3>
         <Tabs
           activeTab={this.state.activeTab}
           onChange={(tabId) => this.setState({ activeTab: tabId })}
           ripple
+          style={{ width: "75%", margin: "auto" }}
         >
           <Tab>
             <span className="tab">All</span>
