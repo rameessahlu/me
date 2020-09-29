@@ -17,24 +17,39 @@ function App() {
               transparent
               title={
                 <div style={{ fontFamily: "Cedarville Cursive" }}>
-                  <img src={logo} alt="logo" width="25" height="25" />
+                  <img src={logo} alt="logo" width="20" height="20" />
                   Ramees Sahlu
                 </div>
               }
               style={{ color: "white" }}
             >
               <Navigation>
-                <HashLink to="/#about_me">
+                <HashLink
+                  to="/#about_me"
+                  scroll={(el) =>
+                    el.scrollIntoView({ behavior: "smooth", block: "end" })
+                  }
+                >
                   <span className="hash-link-style">
                     <span className="numbering">01.</span> About Me
                   </span>
                 </HashLink>
-                <HashLink to="/#solo_projects">
+                <HashLink
+                  to="/#solo_projects"
+                  scroll={(el) =>
+                    el.scrollIntoView({ behavior: "smooth", block: "end" })
+                  }
+                >
                   <span className="hash-link-style">
                     <span className="numbering">02.</span> Projects
                   </span>
                 </HashLink>
-                <HashLink to="/#contact_me">
+                <HashLink
+                  to="/#contact_me"
+                  scroll={(el) =>
+                    el.scrollIntoView({ behavior: "smooth", block: "end" })
+                  }
+                >
                   <span className="hash-link-style">
                     <span className="numbering">03.</span> Contact Me
                   </span>
@@ -60,17 +75,32 @@ function App() {
               style={{ color: "black", background: "#172A45" }}
             >
               <Navigation>
-                <HashLink to="/#about_me">
+                <HashLink
+                  to="/#about_me"
+                  scroll={(el) =>
+                    el.scrollIntoView({ behavior: "smooth", block: "end" })
+                  }
+                >
                   <span className="link-style">
                     <span className="numbering">01.</span>About Me
                   </span>
                 </HashLink>
-                <HashLink to="/#solo_projects">
+                <HashLink
+                  to="/#solo_projects"
+                  scroll={(el) =>
+                    el.scrollIntoView({ behavior: "smooth", block: "end" })
+                  }
+                >
                   <span className="link-style">
                     <span className="numbering">02.</span>Projects
                   </span>
                 </HashLink>
-                <HashLink to="/#contact_me">
+                <HashLink
+                  to="/#contact_me"
+                  scroll={(el) =>
+                    el.scrollIntoView({ behavior: "smooth", block: "end" })
+                  }
+                >
                   <span className="link-style">
                     <span className="numbering">03.</span>Contact Me
                   </span>
