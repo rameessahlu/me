@@ -12,7 +12,7 @@ import {
   IconButton,
   Button,
 } from "react-mdl";
-import "./styles/projects.css";
+import "../styles/projects.css";
 
 class GroupProjects extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class GroupProjects extends Component {
         {
           _id: 0,
           content: {
-            src: "http://www.getmdl.io/assets/demos/welcome_card.jpg",
+            src: "https://static3.depositphotos.com/1000635/120/i/450/depositphotos_1208368-stock-photo-white-paper-seamless-background.jpg",
             type: "img",
           },
           name: "Context based Search Engine",
@@ -150,8 +150,7 @@ class GroupProjects extends Component {
         </Tabs>
         <section>
           <div
-            style={{ width: "95%", margin: "auto" }}
-            className="project-grid-div"
+            style={{  margin: "auto" }}
           >
             <Grid>
               <Cell col={12}>{this.toggleProjects()}</Cell>

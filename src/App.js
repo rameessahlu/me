@@ -1,10 +1,9 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import { Navigation, Drawer, Content, Layout, Header } from "react-mdl";
 import Main from "./components/main";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import logo from "./assets/logo.png";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
               transparent
               title={
                 <div style={{ fontFamily: "Cedarville Cursive" }}>
-                  <img src={logo} alt="logo" width="20" height="20" />
                   Ramees Sahlu
                 </div>
               }
@@ -72,7 +70,7 @@ function App() {
                   Ramees Sahlu
                 </div>
               }
-              style={{ color: "black", background: "#172A45" }}
+              style={{ color: "black", background: "#331e36" }}
             >
               <Navigation>
                 <HashLink

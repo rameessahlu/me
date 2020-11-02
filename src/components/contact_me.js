@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles/contact_me.css";
+import "../styles/contact_me.css";
 
 class ContactMe extends Component {
   render() {
@@ -15,6 +15,7 @@ class ContactMe extends Component {
             width: "82%",
           }}
           className="intro"
+          id="contact-me"
         >
           <span className="numbering">03.</span>Contact Me
         </h3>
@@ -24,6 +25,8 @@ class ContactMe extends Component {
             href="mailto:rameessahlumv@yahoo.com"
             target="_blank"
             rel="noopener noreferrer"
+            data-aos="fade-left"
+            data-aos-anchor="contact-me"
           >
             <i className="fa fa-envelope" aria-hidden="true"></i>
           </a>
@@ -32,6 +35,8 @@ class ContactMe extends Component {
             href="https://www.linkedin.com/in/rameessahlu/"
             target="_blank"
             rel="noopener noreferrer"
+            data-aos="fade-in"
+            data-aos-anchor="contact-me"
           >
             <i className="fa fa-linkedin-square" aria-hidden="true"></i>
           </a>
@@ -40,6 +45,8 @@ class ContactMe extends Component {
             href="https://github.com/rameessahlu"
             target="_blank"
             rel="noopener noreferrer"
+            data-aos="fade-in"
+            data-aos-anchor="contact-me"
           >
             <i className="fa fa-github-square" aria-hidden="true"></i>
           </a>
@@ -48,6 +55,8 @@ class ContactMe extends Component {
             href="https://play.google.com/store/apps/developer?id=diloopStudios"
             target="_blank"
             rel="noopener noreferrer"
+            data-aos="fade-right"
+            data-aos-anchor="contact-me"
           >
             <i className="fa fa-play" aria-hidden="true"></i>
           </a>

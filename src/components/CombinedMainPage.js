@@ -12,7 +12,7 @@ class CombinedMainPage extends Component {
     AOS.init({
       // initialise with other settings
       duration: 3000,
-      disableMutationObserver: false,
+      anchorPlacement: 'top-bottom',
     });
   }
 

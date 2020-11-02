@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles/about_me.css";
+import "../styles/about_me.css";
 import profile_photo from "../assets/profile_pic.png";
 import { Grid, Cell } from "react-mdl";
 
@@ -21,34 +21,29 @@ class AboutMe extends Component {
                 marginBottom: "1em",
                 fontFamily: "Lato",
               }}
+              className="proj-heading intro"
             >
               <span className="numbering">01.</span>About Me
             </h3>
-            <h4 style={{ textAlign: "left" }} data-aos="fade-in">
-              <i className="intro">Hi! I'm Ramees Sahlu </i>
-            </h4>
             <p
               style={{
                 fontSize: "18px",
                 textAlign: "justify",
                 lineHeight: 1.5,
               }}
-              data-aos="fade-in"
+              data-aos="zoom-out-left"
               display="block"
+              id="intro"
             >
-              I'm a recently graduated full-stack software developer based in
-              Bangalore, India. I have previously worked as a full-stack
-              developer at UST Global for 2 years where I was focused on
-              development to DevOps automation such as CI/CD pipeline, testing
-              and deployment. I am a passionate learner and I enjoy writing code
-              and building products, whether that be websites, apps or even
-              games.
+              Hi! I'm Ramees Sahlu, a full-stack engineer based in Bangalore,
+              India. I am a passionate learner and I enjoy writing code and
+              building products, whether that be websites, apps or even games. I
+              am proficinet in development and DevOps automation such as CI/CD
+              pipeline, testing and deployment.
               <br />
               <br />
-              I'm currently looking for a job to restart my career after my
-              Master's, so if you think I'd be a good fit, get in touch. You are
-              welcome to check out my GitHub projects and some of my recent
-              projects are given below.
+              Although I'm not currently looking for any new opportunities, my
+              inbox is always open and I'll try my best to get back to you.
             </p>
             <div className="social-links">
               {/* LinkedIn */}
@@ -57,6 +52,7 @@ class AboutMe extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-aos="fade-left"
+                data-aos-anchor="intro"
               >
                 <i className="fa fa-linkedin-square" aria-hidden="true"></i>
               </a>
@@ -66,6 +62,7 @@ class AboutMe extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-aos="fade-in"
+                data-aos-anchor="intro"
               >
                 <i className="fa fa-github-square" aria-hidden="true"></i>
               </a>
@@ -75,6 +72,7 @@ class AboutMe extends Component {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-aos="fade-right"
+                data-aos-anchor="intro"
               >
                 <i className="fa fa-play" aria-hidden="true"></i>
               </a>

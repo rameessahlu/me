@@ -12,8 +12,9 @@ import {
   IconButton,
   Button,
 } from "react-mdl";
-import "./styles/projects.css";
+import "../styles/projects.css";
 import le_patrika_screenshot from "../assets/le_patrika.jpg";
+import tax_block from "../assets/tax_block.png";
 
 class SoloProjects extends Component {
   constructor(props) {
@@ -54,7 +55,8 @@ class SoloProjects extends Component {
         {
           _id: 2,
           content: {
-            src: "http://www.getmdl.io/assets/demos/welcome_card.jpg",
+            src:
+              "https://static3.depositphotos.com/1000635/120/i/450/depositphotos_1208368-stock-photo-white-paper-seamless-background.jpg",
             type: "img",
           },
           name: "Context based Search Engine",
@@ -66,10 +68,27 @@ class SoloProjects extends Component {
             github: "https://github.com/rameessahlu/ContextualSearchEngine",
           },
         },
+        {
+          _id: 3,
+          content: {
+            src: tax_block,
+            type: "img",
+          },
+          name: "Recruitment Assignment",
+          project_type: "web",
+          desc:
+            "A simple web application which manages the loan. It allows the user to signup, login, create and view a list of loan.",
+          tech_stack: "React, react-mdl, Redux",
+          proj_links: {
+            github: "https://github.com/rameessahlu/me",
+            web_site: "https://xenodochial-knuth-9c81b0.netlify.app",
+          },
+        },
       ],
       name_to_ico: {
         play_store: ["fa fa-play", "Play Store"],
         github: ["fa fa-github-square", "Git Hub"],
+        web_site: ["fa fa-external-link-square", "DEMO"],
       },
     };
   }
@@ -81,7 +100,7 @@ class SoloProjects extends Component {
 
   genarateProjectInfo = (proj_list) => {
     return (
-      <div className="project-grid">
+      <div className="project-grid" id="project-grid">
         {this.state.solo_projects.map((projs) => {
           return (
             <React.Fragment key={projs._id}>
@@ -89,11 +108,18 @@ class SoloProjects extends Component {
                 <Card
                   shadow={5}
                   style={{
-                    minWidth: "20em",
+                    maxWidth: "18em",
                     marginLeft: "3em",
                     marginBottom: "3em",
-                    background: "#172A45",
+                    background: "#AF5B5B",
                   }}
+                  data-aos="fade-in"
+                  data-aos-offset="200"
+                  data-aos-easing="ease-in-out"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  data-aos-anchor="project-grid"
+                  data-aos-delay="50"
                 >
                   {projs.content.type === "img" ? (
                     <CardTitle
@@ -124,14 +150,23 @@ class SoloProjects extends Component {
                     {" "}
                     Stack: {projs.tech_stack}
                   </CardText>
-                  {Object.keys(projs.proj_links).map((key, value) => {
-                    return (
-                      <CardActions border key={projs._id}>
+
+                  <CardActions
+                    border
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    {Object.keys(projs.proj_links).map((key, value) => {
+                      return (
                         <Button
                           onClick={() => {
                             this.handleBtnClick(projs.proj_links[key]);
                           }}
                           style={{ color: "#ccd6f6" }}
+                          key={key}
                         >
                           <i
                             className={this.state.name_to_ico[key][0]}
@@ -140,9 +175,9 @@ class SoloProjects extends Component {
                           ></i>
                           {" " + this.state.name_to_ico[key][1]}
                         </Button>
-                      </CardActions>
-                    );
-                  })}
+                      );
+                    })}
+                  </CardActions>
                   <CardMenu style={{ color: "#fff" }}>
                     <IconButton name="share" />
                   </CardMenu>
@@ -156,67 +191,67 @@ class SoloProjects extends Component {
   };
 
   toggleProjects = () => {
+    let proj_list = [];
     if (this.state.activeTab === 0) {
-      var proj_list = [0, 1, 2];
-      return this.genarateProjectInfo(proj_list);
+      proj_list = [0, 1, 2, 3];
     } else if (this.state.activeTab === 1) {
       proj_list = [0];
-      return this.genarateProjectInfo(proj_list);
     } else if (this.state.activeTab === 2) {
-      proj_list = [2];
-      return this.genarateProjectInfo(proj_list);
+      proj_list = [2, 3];
     } else if (this.state.activeTab === 3) {
       proj_list = [1];
-      return this.genarateProjectInfo(proj_list);
     }
+    return this.genarateProjectInfo(proj_list);
   };
 
   render() {
     return (
-      <div className="category" id={"solo_projects"}>
-        <h3
-          style={{
-            textAlign: "left",
-            margin: "0 auto",
-            justifyContent: "center",
-            marginBottom: "1em",
-            fontFamily: "Lato",
-            width: "88%",
-          }}
-          className="proj-heading intro"
-        >
-          <span className="numbering">02.</span>Projects
-        </h3>
-        <Tabs
-          activeTab={this.state.activeTab}
-          onChange={(tabId) => this.setState({ activeTab: tabId })}
-          ripple
-          style={{ width: "75%", margin: "auto" }}
-        >
-          <Tab>
-            <span className="tab">All</span>
-          </Tab>
-          <Tab>
-            <span className="tab">Mobile</span>
-          </Tab>
-          <Tab>
-            <span className="tab">Web</span>
-          </Tab>
-          <Tab>
-            <span className="tab">Games</span>
-          </Tab>
-        </Tabs>
-        <section>
-          <div
-            style={{ width: "95%", margin: "auto" }}
-            className="project-grid-div"
+      <React.Fragment>
+        <div className="category">
+          <h3
+            style={{
+              textAlign: "left",
+              margin: "0 auto",
+              justifyContent: "center",
+              marginBottom: "1em",
+              fontFamily: "Lato",
+              width: "88%",
+            }}
+            className="proj-heading intro"
           >
-            <Grid>
-              <Cell col={12}>{this.toggleProjects()}</Cell>
-            </Grid>
-          </div>
-        </section>
-      </div>
+            <span className="numbering">02.</span>Projects
+          </h3>
+          <Tabs
+            activeTab={this.state.activeTab}
+            onChange={(tabId) => this.setState({ activeTab: tabId })}
+            ripple
+            style={{ width: "75%", margin: "auto" }}
+          >
+            <Tab>
+              <span className="tab">All</span>
+            </Tab>
+            <Tab>
+              <span className="tab">Mobile</span>
+            </Tab>
+            <Tab>
+              <span className="tab">Web</span>
+            </Tab>
+            <Tab>
+              <span className="tab">Games</span>
+            </Tab>
+          </Tabs>
+          <section id={"solo_projects"}>
+            <div
+              style={{ width: "95%", margin: "auto" }}
+              className="project-grid-div"
+            >
+              <Grid>
+                <Cell col={12}>{this.toggleProjects()}</Cell>
+              </Grid>
+            </div>
+          </section>
+        </div>
+      </React.Fragment>
     );
   }
 }
