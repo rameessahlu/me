@@ -2,11 +2,12 @@
   "name": "Ramees Sahlu",
   "short_name": "Sahlu",
   "theme_color": "#0a192f",
-  "background_color": "46b2a0",
-  "display": "browser",
+  "background_color": "#46b2a0",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
-
+  "orientation": "portrait-primary",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "icons/favicon.png",
