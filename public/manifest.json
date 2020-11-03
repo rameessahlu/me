@@ -5,7 +5,7 @@
   "background_color": "#46b2a0",
   "display": "standalone",
   "scope": "/",
-  "start_url": "https://www.ramees.dev/",
+  "start_url": "/",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [
