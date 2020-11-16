@@ -35,15 +35,14 @@ class AboutMe extends Component {
               display="block"
               id="intro"
             >
-              Hi! I'm Ramees Sahlu, a full-stack engineer based in Bangalore,
-              India. I am a passionate learner and I enjoy writing code and
-              building products, whether that be websites, apps or even games. I
-              am proficinet in development and DevOps automation such as CI/CD
-              pipeline, testing and deployment.
+              Hi! I'm Ramees Sahlu, a full-stack engineer based in Bangalore, India. 
+              I've been in the software industry for more than two years and have worked at both startups and large organizations. 
+              My professional experience varies from full-stack development to DevOps automation such as CI/CD pipeline, testing and deployment. 
+              I enjoy my work, whether it's software development or design and feel passionate about every contribution I make. 
               <br />
               <br />
-              Although I'm not currently looking for any new opportunities, my
-              inbox is always open and I'll try my best to get back to you.
+              I also like to build fun little products like Android apps, web apps or even indie-games as a hobby. 
+              Few of the projects are listed below and please feel free to send me your feedback. Thank You.
             </p>
             <div className="social-links">
               {/* LinkedIn */}
