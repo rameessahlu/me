@@ -74,10 +74,10 @@ class SoloProjects extends Component {
             src: tax_block,
             type: "img",
           },
-          name: "Recruitment Assignment",
+          name: "Loan Management System",
           project_type: "web",
           desc:
-            "A simple web application which manages the loan. It allows the user to signup, login, create and view a list of loan.",
+            "A simple loan management web application. It allows users to signup, login, create and view a list of loans. Created as a part of a recruitment process and data are are not persisted.",
           tech_stack: "React, react-mdl, Redux",
           proj_links: {
             github: "https://github.com/rameessahlu/me",
