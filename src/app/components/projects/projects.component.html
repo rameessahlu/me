@@ -1,0 +1,66 @@
+<ng-container *ngFor="let proj of projects; let i = index">
+  <div ngClass="columns" *ngIf="i % 3 == 0">
+    <ng-container *ngFor="let j of [0, 1, 2]">
+      <ng-container *ngIf="projects.length > i + j">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image px-8">
+              <ng-container
+                *ngIf="
+                  projects[i + j].content.type === 'img';
+                  else videoContent
+                "
+              >
+                <figure class="image is-square">
+                  <img
+                    [src]="projects[i + j].content.src"
+                    [alt]="projects[i + j].name"
+                  />
+                </figure>
+              </ng-container>
+              <ng-template #videoContent>
+                <iframe
+                  height="350em"
+                  width="400em"
+                  [src]="projects[i + j].content.src"
+                ></iframe>
+              </ng-template>
+            </div>
+
+            <div class="card-content description-part">
+              <div class="content">
+                <p class="title is-5">{{ projects[i + j].name }}</p>
+                <br />
+                {{ projects[i + j].desc }}
+              </div>
+            </div>
+
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="subtitle is-6">
+                    Stack: {{ projects[i + j].techStack }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <footer class="card-footer">
+              <ng-container *ngFor="let pLinks of projects[i + j].projLinks">
+                <a [href]="pLinks.src" target="_blank" class="card-footer-item">
+                  <i
+                    [class]="nameToIcon[pLinks.type][0]"
+                    aria-hidden="true"
+                    style="color: '#ccd6f6'; margin-right: 7px"
+                  >
+                  </i>
+                  {{ nameToIcon[pLinks.type][1] }}</a
+                >
+              </ng-container>
+            </footer>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</ng-container>

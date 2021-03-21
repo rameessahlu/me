@@ -1,0 +1,36 @@
+<div class="container is-widescreen">
+  <section class="mt-1 columns">
+    <div class="column is-four-fifths">
+      <h1 class="title is-1">Ramees Sahlu</h1>
+      <h2 class="subtitle is-3">Full Stack Software Engineer</h2>
+    </div>
+    <div class="column">
+      <figure class="image is-128x128 flag">
+        <img src="./../assets/india.png" />
+      </figure>
+    </div>
+  </section>
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+        <div class="tabs is-medium">
+          <ul>
+            <ng-container *ngFor="let tab of tabDetails">
+              <li [ngClass]="{ 'is-active': tab.selected == true }">
+                <a [routerLink]="tab.url">{{ tab.name }}</a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <div class="container is-widescreen">
+    <div class="section is-primary has-text-centered">
+      <a href="https://github.com/rameessahlu/me" target="_blank">
+        Copyright © 2021, Ramees Sahlu. All rights reserved.
+      </a>
+    </div>
+  </div>
+</div>
