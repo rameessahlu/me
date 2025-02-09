@@ -3,9 +3,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { NameToIconMapping, Projects } from 'src/app/models/projects.model';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
+    selector: 'app-projects',
+    templateUrl: './projects.component.html',
+    styleUrls: ['./projects.component.scss'],
+    standalone: false
 })
 export class ProjectsComponent implements OnInit {
   projects: any = Projects;
