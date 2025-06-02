@@ -3,10 +3,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { NameToIconMapping, Projects } from 'src/app/models/projects.model';
 
 @Component({
-    selector: 'app-projects',
-    templateUrl: './projects.component.html',
-    styleUrls: ['./projects.component.scss'],
-    standalone: false
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.scss'],
+  standalone: false,
 })
 export class ProjectsComponent implements OnInit {
   projects: any = Projects;
@@ -19,7 +19,7 @@ export class ProjectsComponent implements OnInit {
         typeof element.content.src == 'string'
       ) {
         element.content.src = this.sanitizer.bypassSecurityTrustResourceUrl(
-          element.content.src
+          element.content.src,
         );
       }
     });

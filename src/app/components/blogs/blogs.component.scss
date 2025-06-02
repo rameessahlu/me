@@ -1,0 +1,148 @@
+.section {
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Make sure main column is responsive */
+.column.is-11 {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Container flex - change to column on mobile */
+.container.is-flex {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* Content area */
+.content {
+  flex: 3;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Search input: make sure it fits mobile */
+input.input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tabs wrap */
+.tabs ul {
+  flex-wrap: wrap;
+}
+
+.tabs li {
+  white-space: nowrap;
+}
+
+/* Card styling */
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  margin-bottom: 1.5rem;
+}
+
+/* Year label styling */
+.year-label-vertical {
+  position: absolute;
+  right: -60px;
+  width: 50px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #888;
+  user-select: none;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  top: 0;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+/* Tabs multiline behavior */
+.tabs.is-multiline {
+  overflow-x: visible !important;
+  white-space: normal !important;
+}
+
+.tabs.is-multiline ul {
+  flex-wrap: wrap !important;
+  display: flex !important;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  row-gap: 0.5rem;
+  overflow: visible !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.tabs.is-multiline li {
+  flex: 0 1 auto;
+  white-space: normal !important;
+  word-break: break-word;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .container.is-flex {
+    flex-direction: column;
+  }
+
+  .column.is-11 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .content {
+    flex: none;
+    width: 100% !important;
+  }
+
+  input.input {
+    width: 100%;
+  }
+
+  .tabs ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .tabs li {
+    flex: 0 1 auto;
+    white-space: normal;
+    margin-bottom: 0.25rem;
+  }
+
+  .tabs.is-multiline li a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .year-label-vertical {
+    position: relative !important;
+    right: auto !important;
+    width: auto !important;
+    font-size: 1rem !important;
+    color: #555 !important;
+    writing-mode: horizontal-tb !important;
+    text-orientation: initial !important;
+    top: auto !important;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 0.25rem;
+    white-space: normal !important;
+    overflow-wrap: break-word;
+  }
+
+  .card {
+    width: 100% !important;
+    margin-top: 1.5rem;
+  }
+}

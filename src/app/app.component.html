@@ -1,37 +1,65 @@
-<div class="container is-widescreen">
-  <section class="mt-1 columns">
-    <div class="column is-four-fifths">
-      <h1 class="title is-1">Ramees Sahlu</h1>
-      <h2 class="subtitle is-3">Software Engineer</h2>
+<div class="container">
+  <section class="mt-1 columns is-centered is-mobile">
+    <div class="column is-1-mobile is-1-desktop"></div>
+
+    <div class="column is-8-mobile is-8-desktop">
+      <h1 class="title is-1 is-size-3-mobile">Ramees Sahlu</h1>
+      <h2 class="subtitle is-3 is-size-5-mobile">Software Engineer</h2>
     </div>
-    <div class="column">
-      <figure class="image is-128x128 flag">
-        <img src="./../assets/india.png" />
+
+    <!-- Theme toggle added in the right column -->
+    <div
+      class="column is-2-mobile is-2-desktop is-narrow is-flex is-flex-direction-column is-justify-content-space-between"
+    >
+      <figure class="image mb-2" style="margin-bottom: auto">
+        <img src="./../assets/india.png" style="width: 60%; float: right" />
       </figure>
+      <button
+        (click)="toggleTheme()"
+        class="button is-small is-light mt-2"
+        style="align-self: flex-end"
+      >
+        {{ isDarkMode ? "🌞 Light" : "🌙 Dark" }}
+      </button>
     </div>
+
+    <div class="column is-1-mobile is-1-desktop"></div>
   </section>
-  <div class="card">
-    <div class="card-content">
-      <div class="content">
-        <div class="tabs is-medium">
-          <ul>
-            <ng-container *ngFor="let tab of tabDetails">
-              <li [ngClass]="{ 'is-active': tab.selected == true, 'is-disabled': tab.disabled }">
-                <a *ngIf="!tab.disabled" [routerLink]="tab.url">{{ tab.name }}</a>
-                <span *ngIf="tab.disabled">{{ tab.name }}</span>
-              </li>
-            </ng-container>
-          </ul>
+</div>
+
+<div class="container">
+  <section class="columns is-centered is-mobile">
+    <div class="column is-1-mobile is-1-desktop"></div>
+    <div class="column is-10-mobile is-10-desktop">
+      <div class="card">
+        <div class="card-content">
+          <div class="tabs is-mobile tabs-mobile-small s-toggle">
+            <ul>
+              <ng-container *ngFor="let tab of tabDetails">
+                <li
+                  [ngClass]="{
+                    'is-active': tab.selected,
+                    'is-disabled': tab.disabled,
+                  }"
+                >
+                  <a *ngIf="!tab.disabled" [routerLink]="tab.url">{{
+                    tab.name
+                  }}</a>
+                  <span *ngIf="tab.disabled">{{ tab.name }}</span>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+          <router-outlet></router-outlet>
         </div>
-        <router-outlet></router-outlet>
       </div>
     </div>
-  </div>
-  <div class="container is-widescreen">
-    <div class="section is-primary has-text-centered">
-      <a href="https://github.com/rameessahlu/me" target="_blank">
-        Copyright © 2021, Ramees Sahlu. All rights reserved.
-      </a>
-    </div>
-  </div>
+    <div class="column is-1-mobile is-1-desktop"></div>
+  </section>
+</div>
+
+<div class="section is-primary has-text-centered mt-4">
+  <a href="https://github.com/rameessahlu/me" target="_blank">
+    Copyright © 2021, Ramees Sahlu. All rights reserved.
+  </a>
 </div>

@@ -1,3 +1,9 @@
-.flag {
-  float: right;
+@media screen and (max-width: 768px) {
+  .tabs-mobile-small {
+    font-size: 0.75rem;
+  }
+
+  .tabs-mobile-small a {
+    padding: 0.25em 0.5em;
+  }
 }

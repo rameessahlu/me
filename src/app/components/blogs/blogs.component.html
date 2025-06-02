@@ -1,0 +1,81 @@
+<section class="section">
+  <div class="column is-11" style="position: relative">
+    <div class="container is-flex">
+      <div class="content" style="flex: 3; position: relative">
+        <h1 class="title">My Blog</h1>
+
+        <!-- Search -->
+        <div class="field">
+          <div class="control">
+            <input
+              class="input"
+              type="text"
+              placeholder="Search blog posts..."
+              [(ngModel)]="searchText"
+            />
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="tabs is-toggle is-small is-flex-wrap-wrap is-multiline">
+          <ul>
+            <li
+              *ngFor="let tag of allTags"
+              [class.is-active]="selectedTag === tag"
+            >
+              <a (click)="selectedTag = tag">{{ tag }}</a>
+            </li>
+          </ul>
+        </div>
+
+        <div style="position: relative">
+          <!-- Posts -->
+          <div
+            *ngFor="let post of filteredPosts; let i = index"
+            class="mb-4"
+            [attr.data-year]="post.date.getFullYear()"
+            #yearRef
+          >
+            <div
+              *ngIf="isFirstPostOfYear(i, post.date.getFullYear())"
+              class="year-label-vertical"
+              [style.top.px]="getYearLabelPosition(i)"
+            >
+              {{ post.date.getFullYear() }}
+            </div>
+
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">
+                      <a
+                        href="{{ post.url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >{{ post.title }}</a
+                      >
+                    </p>
+
+                    <p class="subtitle is-6">
+                      {{ post.date | date: "mediumDate" }}
+                    </p>
+                  </div>
+                </div>
+                <div class="content">
+                  {{ post.content }}
+                  <br />
+                  <small class="has-text-grey"
+                    >Tags: {{ post.tags.join(", ") }}</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p *ngIf="filteredPosts.length === 0">No posts found.</p>
+      </div>
+    </div>
+  </div>
+</section>

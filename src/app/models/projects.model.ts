@@ -23,13 +23,11 @@ const projects: any = [
     name: 'Pet Droplets',
     projectType: 'game',
     techStack: 'C#, Unity Engine',
-    desc:
-      'A casual game developed for the mobile platform as part of a contribution to National Immunization Awareness Month (NIAM). The game intends to create awareness among children on the importance of vaccines and how it protects against serious life-threatening disease. ',
+    desc: 'A casual game developed for the mobile platform as part of a contribution to National Immunization Awareness Month (NIAM). The game intends to create awareness among children on the importance of vaccines and how it protects against serious life-threatening disease. ',
     projLinks: [
       {
         type: 'playstore',
-        src:
-          'https://play.google.com/store/apps/details?id=com.diloopstudios.DisinfectantTunnelForPets',
+        src: 'https://play.google.com/store/apps/details?id=com.diloopstudios.DisinfectantTunnelForPets',
       },
     ],
   },
@@ -41,8 +39,7 @@ const projects: any = [
     },
     name: 'Context based Search Engine',
     projectType: 'web',
-    desc:
-      ' A context based search engine which can accept query from user and search the document of all types from a shared location and provide the closest description with highest matching values',
+    desc: ' A context based search engine which can accept query from user and search the document of all types from a shared location and provide the closest description with highest matching values',
     techStack: 'Python flask, ElasticSearch, CSS',
     projLinks: [
       {
@@ -59,8 +56,7 @@ const projects: any = [
     },
     name: 'Loan Management System',
     projectType: 'web',
-    desc:
-      'A simple loan management web application. It allows users to signup, login, create and view a list of loans. Created as a part of a recruitment process and data are are not persisted.',
+    desc: 'A simple loan management web application. It allows users to signup, login, create and view a list of loans. Created as a part of a recruitment process and data are are not persisted.',
     techStack: 'React, react-mdl, Redux',
     projLinks: [
       {
