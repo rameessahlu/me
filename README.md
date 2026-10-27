@@ -30,6 +30,7 @@ The app uses Angular 22.2, standalone components, lazy chapter routes, zoneless 
 
 - Introduction: `src/app/components/home/home.component.html`
 - Professional experience and volunteering: `src/app/models/experience.model.ts`
+- Certifications and credential links: `src/app/models/certifications.model.ts`
 - Timeline layout: `src/app/components/experience/experience.component.html`
 - Blog posts: `src/app/models/blogs.model.ts`
 - Contact links: `src/app/components/contact/contact.component.html`
