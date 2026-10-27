@@ -1,0 +1,27 @@
+.timeline { list-style: none; padding: 0; margin: 12px 0 0; }
+.timeline-item { display: grid; grid-template-columns: 106px minmax(0, 1fr); column-gap: 28px; position: relative; }
+.timeline-date { padding: 7px 0 36px; font: 11px/1.8 var(--mono); color: var(--muted); }
+.timeline-date > * { display: block; }
+.timeline-date > span[aria-hidden] { line-height: 1.1; }
+.present { color: var(--ink); }
+.timeline-content { position: relative; padding: 0 0 36px 26px; border-left: 1px solid var(--line); }
+.timeline-content::before { content: ''; position: absolute; width: 9px; height: 9px; border: 1px solid var(--ink); background: var(--paper); left: -5px; top: 8px; border-radius: 50%; }
+.current-role .timeline-content::before { background: var(--ink); }
+.timeline-item:last-child .timeline-content { padding-bottom: 8px; }
+.company { margin: 2px 0 10px; font: 11px/1.8 var(--mono); letter-spacing: 1px; text-transform: uppercase; }
+h3 { font-size: 27px; line-height: 1.25; margin: 0 0 10px; text-wrap: pretty; }
+.location { color: var(--muted); font: 11px/1.6 var(--mono); margin: 0 0 16px; }
+.role-summary { font-size: var(--reading-size, 19px); line-height: 1.7; margin: 15px 0; color: var(--muted); }
+.highlights { padding-left: 18px; margin: 0; color: var(--muted); font-size: calc(var(--reading-size, 19px) - 2px); line-height: 1.7; }
+.highlights li { padding-left: 3px; margin-bottom: 10px; }
+.highlights li::marker { font-size: 10px; color: var(--ink); }
+.toolkit { font: 10px/1.9 var(--mono); color: var(--muted); margin: 18px 0 0; }
+@media (max-width: 600px) {
+  .timeline-item { grid-template-columns: minmax(0, 1fr); border-left: 1px solid var(--line); padding-left: 23px; }
+  .timeline-item::before { content: ''; position: absolute; width: 9px; height: 9px; border: 1px solid var(--ink); border-radius: 50%; background: var(--paper); left: -5px; top: 12px; }
+  .current-role::before { background: var(--ink); }
+  .timeline-date { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; padding: 4px 0 12px; }
+  .timeline-content { border: 0; padding: 0 0 32px; }
+  .timeline-content::before { display: none; }
+  h3 { font-size: 25px; }
+}

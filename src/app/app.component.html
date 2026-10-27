@@ -1,65 +1,64 @@
-<div class="container">
-  <section class="mt-1 columns is-centered is-mobile">
-    <div class="column is-1-mobile is-1-desktop"></div>
-
-    <div class="column is-8-mobile is-8-desktop">
-      <h1 class="title is-1 is-size-3-mobile">Ramees Sahlu</h1>
-      <h2 class="subtitle is-3 is-size-5-mobile">Software Engineer</h2>
+<div class="portfolio" [class.cool-paper]="coolPaper()" [class.high-contrast]="highContrast()" [style.--reading-size]="fontSize() + 'px'">
+  <a class="skip-link" href="#main" (click)="$event.preventDefault(); mainContent.focus()">Skip to content</a>
+  <div class="reader">
+    <div class="system-bar">
+      <span>THE PERSONAL EDITION <span class="edition"> / VOL. 01</span></span>
+      <span class="reader-status">A LITTLE LESS DIGITAL <span class="battery" aria-hidden="true"></span></span>
     </div>
-
-    <!-- Theme toggle added in the right column -->
-    <div
-      class="column is-2-mobile is-2-desktop is-narrow is-flex is-flex-direction-column is-justify-content-space-between"
-    >
-      <figure class="image mb-2" style="margin-bottom: auto">
-        <img src="./../assets/india.png" style="width: 60%; float: right" />
-      </figure>
-      <button
-        (click)="toggleTheme()"
-        class="button is-small is-light mt-2"
-        style="align-self: flex-end"
-      >
-        {{ isDarkMode ? "🌞 Light" : "🌙 Dark" }}
-      </button>
-    </div>
-
-    <div class="column is-1-mobile is-1-desktop"></div>
-  </section>
-</div>
-
-<div class="container">
-  <section class="columns is-centered is-mobile">
-    <div class="column is-1-mobile is-1-desktop"></div>
-    <div class="column is-10-mobile is-10-desktop">
-      <div class="card">
-        <div class="card-content">
-          <div class="tabs is-mobile tabs-mobile-small s-toggle">
-            <ul>
-              <ng-container *ngFor="let tab of tabDetails">
-                <li
-                  [ngClass]="{
-                    'is-active': tab.selected,
-                    'is-disabled': tab.disabled,
-                  }"
-                >
-                  <a *ngIf="!tab.disabled" [routerLink]="tab.url">{{
-                    tab.name
-                  }}</a>
-                  <span *ngIf="tab.disabled">{{ tab.name }}</span>
-                </li>
-              </ng-container>
-            </ul>
-          </div>
-          <router-outlet></router-outlet>
-        </div>
+    <header class="masthead">
+      <a class="brand" routerLink="/about" aria-label="Ramees Sahlu — home"><img class="brand-mark" src="assets/logo.svg" width="36" height="36" alt=""><span>ramees sahlu.<small>a work in progress</small></span></a>
+      <nav aria-label="Main navigation">
+        @for (chapter of chapters; track chapter.path) {
+          <a [routerLink]="chapter.path" routerLinkActive="current" ariaCurrentWhenActive="page">{{ chapter.label }}</a>
+        }
+      </nav>
+      <div class="reader-tools">
+        <button #appearanceButton type="button" aria-label="Reading appearance" aria-controls="reading-settings"
+          [attr.aria-expanded]="appearanceOpen()" (click)="appearanceOpen.set(!appearanceOpen())">Aa</button>
+        <button type="button" aria-label="Cool paper tone" [attr.aria-pressed]="coolPaper()" (click)="togglePaper()">◐</button>
       </div>
+    </header>
+    @if (appearanceOpen()) {
+      <section class="reading-settings" id="reading-settings" aria-label="Reading appearance">
+        <div class="size-control"><span>TYPE SIZE</span>
+          <button type="button" aria-label="Smaller text" [disabled]="fontSize() <= 16" (click)="changeFontSize(-1)">A−</button>
+          <output aria-label="Current text size" aria-live="polite">{{ fontSize() }}</output>
+          <button type="button" aria-label="Larger text" [disabled]="fontSize() >= 24" (click)="changeFontSize(1)">A+</button>
+        </div>
+        <button class="contrast-control" type="button" [attr.aria-pressed]="highContrast()" (click)="toggleContrast()">High contrast</button>
+        <p>Make yourself comfortable.</p>
+      </section>
+    }
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="eyebrow">In this edition</div>
+        <nav class="contents" aria-label="Chapters">
+          @for (chapter of chapters; track chapter.path; let i = $index) {
+            <a [routerLink]="chapter.path" routerLinkActive="active" ariaCurrentWhenActive="page"><span>0{{ i + 1 }}</span>{{ chapter.title }}</a>
+          }
+        </nav>
+        <div class="margin-note">
+          <div class="flourish" aria-hidden="true">❧</div>
+          <p>A little space on the internet.<br>Best read slowly.</p>
+          <span class="eyebrow">Bangalore, India</span>
+        </div>
+      </aside>
+      <main #mainContent id="main" tabindex="-1">
+        <router-outlet (activate)="focusChapter()"></router-outlet>
+      </main>
     </div>
-    <div class="column is-1-mobile is-1-desktop"></div>
-  </section>
-</div>
-
-<div class="section is-primary has-text-centered mt-4">
-  <a href="https://github.com/rameessahlu/me" target="_blank">
-    Copyright © 2021, Ramees Sahlu. All rights reserved.
-  </a>
+    <footer class="reader-footer">
+      <span>DESIGNED TO FEEL A LITTLE LESS DIGITAL.</span>
+      <nav class="pager" aria-label="Page navigation">
+        <a [routerLink]="chapterPath(-1)" aria-label="Previous chapter">←</a>
+        <span aria-live="polite">0{{ currentChapter() + 1 }} / 04</span>
+        <a [routerLink]="chapterPath(1)" aria-label="Next chapter">→</a>
+      </nav>
+      <span>{{ progress }}% READ</span>
+    </footer>
+    <div class="reading-progress" aria-hidden="true"><div [style.width.%]="progress"></div></div>
+  </div>
+  <p class="colophon">© {{ year }} RAMEES SAHLU <span>·</span> THE PAPER EDITION <span>·</span>
+    <a href="https://github.com/rameessahlu/me" target="_blank" rel="noopener noreferrer">VIEW SOURCE ↗</a>
+  </p>
 </div>
