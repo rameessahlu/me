@@ -25,3 +25,7 @@ h3 { font-size: 27px; line-height: 1.25; margin: 0 0 10px; text-wrap: pretty; }
   .timeline-content::before { display: none; }
   h3 { font-size: 25px; }
 }
+.certifications { list-style: none; padding: 0; margin: 0; }
+.certification { padding: 20px 0 24px; border-bottom: 1px solid var(--line); }
+.certification h3 { margin: 10px 0; }
+.credential-validity { margin: 0 0 14px; color: var(--muted); font: 11px/1.8 var(--mono); }

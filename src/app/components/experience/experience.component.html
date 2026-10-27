@@ -50,5 +50,22 @@
       </ol>
     </section>
   }
+  <section class="chapter-body" aria-labelledby="certifications-title">
+    <div class="section-head"><h2 id="certifications-title">Certifications</h2><span>Learning, put into practice.</span></div>
+    <ul class="certifications">
+      @for (certification of certifications; track certification.id) {
+        <li class="certification">
+          <span class="tag">{{ certification.issuer || certification.platform }}</span>
+          <h3>{{ certification.name }}</h3>
+          @if (certification.dateDetails) {
+            <p class="credential-validity">{{ certification.dateDetails }}</p>
+          } @else if (certification.validity) {
+            <p class="credential-validity">Validity: {{ certification.validity }}</p>
+          }
+          <a class="text-link" [href]="certification.url" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span><span class="sr-only"> for {{ certification.name }} (opens in a new tab)</span></a>
+        </li>
+      }
+    </ul>
+  </section>
   <p class="endnote">The next chapter is still being written.</p>
 </section>
