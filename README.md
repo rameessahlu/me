@@ -1,27 +1,40 @@
-# Me
+# Ramees Sahlu — The Paper Edition
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+An e-ink-inspired Angular portfolio: warm paper, monochrome typography, chapter navigation, and adjustable reading preferences.
 
-## Development server
+## Development
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Use Node.js 24 LTS (24.15.0 or newer). Angular also supports Node.js ^22.22.3 or >=26.0.0.
 
-## Code scaffolding
+On Windows, install the full Node.js LTS distribution, which includes npm, and ensure its directory is on PATH. Restart PowerShell and any editor that was open during installation. Check `node --version` and `npm --version` before running the commands below.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm ci
+npm start
+```
 
-## Build
+Open http://localhost:4200. Routes are /about, /experience, /blogs, and /contact. The old /projects URL redirects to /experience.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Build and checks
 
-## Running unit tests
+```sh
+npm run build
+npm test
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The production site is generated in `dist/me/browser`. Configure static hosting to serve `index.html` for unmatched paths so direct chapter links and browser refreshes work.
 
-## Running end-to-end tests
+The app uses Angular 22.2, standalone components, lazy chapter routes, zoneless change detection, and Vitest. Node and TypeScript versions follow Angular's compatibility requirements: https://angular.dev/reference/versions.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Content and appearance
 
-## Further help
+- Introduction: `src/app/components/home/home.component.html`
+- Professional experience and volunteering: `src/app/models/experience.model.ts`
+- Timeline layout: `src/app/components/experience/experience.component.html`
+- Blog posts: `src/app/models/blogs.model.ts`
+- Contact links: `src/app/components/contact/contact.component.html`
+- Logo and favicon source: `src/assets/logo.svg`
+- Shared paper theme: `src/styles.scss`
+- Reader shell: `src/app/app.component.scss`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The Aa control adjusts text size and contrast; the paper control switches warm/cool tone. Preferences are stored locally in the visitor's browser. The prototype has been integrated into the app; no temporary site is needed.
