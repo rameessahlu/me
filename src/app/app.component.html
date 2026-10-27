@@ -6,7 +6,7 @@
       <span class="reader-status">A LITTLE LESS DIGITAL <span class="battery" aria-hidden="true"></span></span>
     </div>
     <header class="masthead">
-      <a class="brand" routerLink="/about" aria-label="Ramees Sahlu — home"><img class="brand-mark" src="assets/logo.svg" width="36" height="36" alt=""><span>ramees sahlu.<small>a work in progress</small></span></a>
+      <a class="brand" routerLink="/about" aria-label="Ramees Sahlu home"><img class="brand-mark" src="assets/logo.svg" width="36" height="36" alt=""><span>ramees sahlu.<small>a work in progress</small></span></a>
       <nav aria-label="Main navigation">
         @for (chapter of chapters; track chapter.path) {
           <a [routerLink]="chapter.path" routerLinkActive="current" ariaCurrentWhenActive="page">{{ chapter.label }}</a>

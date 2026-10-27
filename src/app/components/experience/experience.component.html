@@ -13,7 +13,7 @@
           <li class="timeline-item" [class.current-role]="!experience.end">
             <div class="timeline-date">
               <time [attr.datetime]="experience.start">{{ experience.startLabel }}</time>
-              <span aria-hidden="true">—</span><span class="sr-only">to</span>
+              <span>to</span>
               @if (experience.end) {
                 <time [attr.datetime]="experience.end">{{ experience.endLabel }}</time>
               } @else {

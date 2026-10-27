@@ -1,4 +1,4 @@
-# Ramees Sahlu — The Paper Edition
+# Ramees Sahlu | The Paper Edition
 
 An e-ink-inspired Angular portfolio: warm paper, monochrome typography, chapter navigation, and adjustable reading preferences.
 
@@ -22,7 +22,7 @@ npm run build
 npm test
 ```
 
-The production site is generated in `dist/me/browser`. Configure static hosting to serve `index.html` for unmatched paths so direct chapter links and browser refreshes work.
+The production site is generated in `dist/me/browser`. `netlify.toml` sets the build command, publish directory, and Node version for Netlify. Angular copies `src/_redirects` into the published folder, where its `/* /index.html 200` rewrite lets direct links and page refreshes reach the Angular router. Commit and push these files, then redeploy on Netlify to apply the routing fix. For manual uploads, deploy the contents of `dist/me/browser`, including `_redirects`.
 
 The app uses Angular 22.2, standalone components, lazy chapter routes, zoneless change detection, and Vitest. Node and TypeScript versions follow Angular's compatibility requirements: https://angular.dev/reference/versions.
 
